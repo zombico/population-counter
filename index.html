@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Populations</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,800" rel="stylesheet">
+</head>
+<body>
+
+<style>
+label {
+    font-family:Nunito, sans-serif;
+    font-weight:800;
+    font-size:1.6em;
+}
+h1 {  color:white;font-family:Nunito, sans-serif;text-align:center;font-weight:800; }
+
+h2 {  color:white;font-family:Nunito, sans-serif;text-align:center;font-weight:400; }
+p {    font-family:Nunito, sans-serif;text-align:center;}
+ 
+select {font-size:1.3em;}
+
+#youthbox{
+position:absolute;top:70%;left:28% ;width:175px; margin:auto;	
+}
+
+#adultbox{
+position:absolute;top:65%;left:41% ;width:265px; margin:auto;
+}
+
+#seniorbox{
+position:absolute;top:67%;left:61% ;width:180px; margin:auto;
+}
+
+#youthinfo{
+ position:absolute;top:40%;left:24% ;width:190px; margin:auto; 
+}
+
+#adultinfo{
+ position:absolute;top:40%;left:42% ;width:190px; margin:auto;  
+}
+
+#seniorinfo{
+ position:absolute;top:40%;left:61% ;width:190px; margin:auto; 
+}
+.hidden{display:none;}
+
+.poptext{
+     
+}
+
+.popbox{
+border-radius:10px;background:white;padding:5px 10px;   
+-webkit-box-shadow: 7px 6px 0px -2px rgba(211,204,221,1);
+-moz-box-shadow: 7px 6px 0px -2px rgba(211,204,221,1);
+box-shadow: 7px 6px 0px -2px rgba(211,204,221,1);
+}
+
+ 
+#selector {margin:auto;text-align:center}
+ 
+
+
+body {
+    background:#371B46
+}
+
+
+</style>
+
+<div id='selector' >
+         <form >
+        <label for='countrypicker1'> </label><br>
+        <select id='countrypicker1'>
+            <option value='Country'>Select Country</option>
+        
+
+        </select>
+        </form>
+<br><br> 
+<div id='bigresult' class='hidden'>
+<h2>Population</h2> 
+<h1 id='result'></h1>
+</div>
+     
+</div>
+
+<!-- <div id='selector2' >
+         <form >
+        <label for='countrypicker2'>Adult </label><br>
+        <select id='countrypicker2'>
+            <option value='Country'>Select Country</option>
+        
+
+        </select>
+        </form>
+     
+</div>
+
+<div id='selector3' >
+         <form >
+        <label for='countrypicker3'>Senior </label><br>
+        <select id='countrypicker3'>
+            <option value='Country'>Select Country</option>
+        
+
+        </select>
+        </form>
+     
+</div> -->
+<div id='jar' style=' width:100%;text-align: center;margin-top:40px'>
+
+
+
+
+
+<svg width="735px" height="486px" viewBox="0 0 735 486" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3">
+            <path d="M498.219093,609.067159 C645.487998,609.067159 645.487998,-125.485222 498.219093,-125.485222 C350.950189,-125.485222 123.405989,-94.5380369 125.901969,241.790969 C128.39795,578.119974 350.950189,609.067159 498.219093,609.067159 Z" id="Oval-Copy" fill="#D7F3F2" transform="translate(367.276190, 241.790969) rotate(-270.000000) translate(-367.276190, -241.790969) "></path>
+            <ellipse id="Oval-Copy-2" fill="#766D6D" cx="367.354543" cy="379.65913" rx="367.354543" ry="106.335788"></ellipse>
+            <ellipse id="Oval" fill="#D3CCDD" cx="367.354543" cy="366.824534" rx="367.354543" ry="93.8245339"></ellipse>
+            <ellipse id="Oval-2" fill="#FFFFFF" cx="125.492619" cy="208.249027" rx="42.4926193" ry="19.2490266"></ellipse>
+            <ellipse id="Oval-2-Copy-6" fill="#FFFFFF" cx="605.654255" cy="173.981679" rx="39.6542553" ry="18.981679"></ellipse>
+            <ellipse id="Oval-2-Copy-8" fill="#FFFFFF" cx="294.654255" cy="104.981679" rx="39.6542553" ry="18.981679"></ellipse>
+            <ellipse id="Oval-2-Copy" fill="#FFFFFF" cx="167.492619" cy="184.249027" rx="42.4926193" ry="19.2490266"></ellipse>
+            <ellipse id="Oval-2-Copy-7" fill="#FFFFFF" cx="324.492619" cy="85.2490266" rx="42.4926193" ry="19.2490266"></ellipse>
+            <ellipse id="Oval-2-Copy-2" fill="#FFFFFF" cx="201.426872" cy="213.20221" rx="53.4268717" ry="24.2022095"></ellipse>
+            <ellipse id="Oval-2-Copy-3" fill="#FFFFFF" cx="535.858137" cy="189.866068" rx="49.8581365" ry="23.8660677"></ellipse>
+            <ellipse id="Oval-2-Copy-4" fill="#FFFFFF" cx="485.858137" cy="166.866068" rx="49.8581365" ry="23.8660677"></ellipse>
+            <ellipse id="Oval-2-Copy-5" fill="#FFFFFF" cx="554.168828" cy="158.398558" rx="32.1688281" ry="15.3985585"></ellipse>
+            <ellipse id="Oval-2-Copy-9" fill="#FFFFFF" cx="356.168828" cy="108.398558" rx="32.1688281" ry="15.3985585"></ellipse>
+        </g>
+    </g>
+</svg>
+
+	
+</div>
+<div id='infos' >
+    <div id='youthinfo' class='popbox hidden'>
+       <p id='poptext1'> </p> <p id='perctext1'> </p> 
+    </div>
+    
+    <div id='youthbox' >
+    </div>
+    
+    <div id='adultinfo' class='popbox hidden'>
+       <p id='poptext2'> </p> <p id='perctext2'> </p>
+    </div>
+    
+    <div id='adultbox' >
+    </div>
+
+    <div id='seniorinfo' class='popbox hidden'>
+       <p id='poptext3'> </p> <p id='perctext3'> </p>
+    </div>
+    
+    <div id='seniorbox' > 
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- <script src='../libraries/jquery-3.2.1.min.js'></script> -->
+<script>
+
+var app= {}
+ 
+var countryVal = '';
+var population1= [];
+var population2= [];
+var population3= [];
+var youth = 0
+var adult = 0
+var senior = 0
+
+var sample = [
+    'Canada','Mexico','China','Russian Federation', 'Australia','Brazil','Pakistan','France','Germany','Italy','Greece','India','Indonesia','Philippines','Rep of Korea','Japan','United States','Thailand','Saudi Arabia','South Africa','Spain','Uganda','United Kingdom']
+
+
+
+
+
+app.restart= function(){
+
+    $('#youthbox').empty(); $('#adultbox').empty(); $('#seniorbox').empty()
+    population1= [];
+    population2= [];
+    population3= [];
+
+}
+ 
+app.toggler = function(){
+   
+    $('#countrypicker1').on('change', function(){
+        
+        app.restart()
+        var countrypicked = $('#countrypicker1').val()
+       
+        app.getYouthSegment(countrypicked)
+        app.getAdultSegment(countrypicked)
+        app.getSeniorSegment(countrypicked)
+        $('#youthinfo').removeClass('hidden')
+        $('#adultinfo').removeClass('hidden')
+        $('#seniorinfo').removeClass('hidden')
+        $('#bigresult').removeClass('hidden')
+    }) 
+}
+
+
+app.getData1= function(country, age){
+	$.ajax({
+	    url: 'http://54.72.28.201/1.0/population/2016/'+country+ '/'+age+'/',
+	    type: 'GET',
+	           
+		success: function(result){
+			population1.push(result)
+	     
+			var subtotal = population1.map(
+				function(people){
+					return people[0].total
+				})
+			
+			var maletotal = population1.map(
+				function(people){
+					return people[0].males
+				})
+
+			var femaletotal = population1.map(
+				function(people){
+					return people[0].females
+				})
+
+			var basket = subtotal.reduce(function(a,b){return a +b },0);
+                      
+           var malebasket = maletotal.reduce(function(a,b){return a +b },0);
+ 			var femalebasket = femaletotal.reduce(function(a,b){return a +b },0);
+ 			youth = basket;
+             app.printYouth(
+                Math.round(malebasket/1000000),
+                Math.round(femalebasket/1000000)
+                )
+            var printed =  Math.round( basket/1000000 * 10 ) / 10;
+            $('#poptext1').html(`Youths, Age 0 - 18<br> <strong>${printed} Million</strong> `)
+
+		} 
+
+	})
+
+ 
+}
+
+ 
+
+app.getData2= function(country, age){
+    $.ajax({
+        url: 'http://54.72.28.201/1.0/population/2016/'+country+ '/'+age+'/',
+        type: 'GET',
+               
+        success: function(result){
+            population2.push(result)
+         
+            var subtotal = population2.map(
+                function(people){
+                    return people[0].total
+                })
+            
+            var maletotal = population2.map(
+                function(people){
+                    return people[0].males
+                })
+
+            var femaletotal = population2.map(
+                function(people){
+                    return people[0].females
+                })
+
+            var basket = subtotal.reduce(function(a,b){return a +b },0);
+            
+           var malebasket = maletotal.reduce(function(a,b){return a +b },0);
+            var femalebasket = femaletotal.reduce(function(a,b){return a +b },0);
+            adult= basket
+             app.printAdult(
+                Math.round(malebasket/1000000),
+                Math.round(femalebasket/1000000)
+                )
+             var printed =  Math.round( basket/1000000 * 10 ) / 10;
+             
+            $('#poptext2').html(`Adults, Age 19 - 59<br> <strong> ${printed} Million</strong> `)
+             
+        } 
+
+    })
+
+ 
+}
+
+app.getData3= function(country, age){
+    
+    $.ajax({
+        url: 'http://54.72.28.201/1.0/population/2016/'+country+ '/'+age+'/',
+        type: 'GET',
+               
+        success: function(result){
+
+            population3.push(result)
+         
+            var subtotal = population3.map(
+                function(people){
+                    return people[0].total
+                })
+            
+            var maletotal = population3.map(
+                function(people){
+                    return people[0].males
+                })
+
+            var femaletotal = population3.map(
+                function(people){
+                    return people[0].females
+                })
+
+            var basket = subtotal.reduce(function(a,b){return a +b },0);  
+           var malebasket = maletotal.reduce(function(a,b){return a +b },0);
+            var femalebasket = femaletotal.reduce(function(a,b){return a +b },0);
+            senior = basket
+             app.printSenior(
+                Math.round(malebasket/1000000),
+                Math.round(femalebasket/1000000)
+                )
+              
+             var printed =  Math.round( basket/1000000 * 10 ) / 10;
+             var everybody = youth+adult+senior    
+
+            $('#poptext3').empty() 
+            $('#poptext3').html(`Seniors, Age 60 - 90<br>  <strong> ${printed} Million</strong `)
+             $('#result').html((everybody).toLocaleString())
+
+             $('#perctext3').html(`${Math.round(senior/everybody * 100)} % of total`)
+             $('#perctext2').html(`${Math.round(adult/everybody * 100)} % of total`)
+              $('#perctext1').html(`${Math.round(youth/everybody * 100)} % of total`)
+        } 
+    })
+}
+
+ 
+
+app.getSegment1 = function(age0, age1, country) {
+ 
+	
+    for  (i = age0; i < age1; i++){ 	
+ 
+    app.getData1(country, i)
+   
+    }
+    
+
+}
+
+app.getSegment2 = function(age0, age1, country) {
+ 
+    
+    for  (i = age0; i < age1; i++){     
+ 
+    app.getData2(country, i)
+   
+    }    
+}
+app.getSegment3 = function(age0, age1, country) {
+ 
+    
+    for  (i = age0; i < age1; i++){     
+ 
+    app.getData3(country, i)
+   
+    }    
+}
+
+app.getYouthSegment = function(country){
+	app.getSegment1(1,18,country)
+
+  }
+
+app.getAdultSegment = function(country){
+	app.getSegment2(19,59,country)
+  }
+
+app.getSeniorSegment = function(country){
+	app.getSegment3(60,90,country)
+  }
+
+
+app.printYouth = function(males, females){
+	$('#youthbox').empty();    
+    for ( i = 0; i < males; i++){
+	app.printYouthBoy(males)
+	};
+	for ( j = 0; j < females; j++){
+	app.printYouthGirl(females)
+	}
+}
+
+app.printYouthBoy = function(){
+  
+ $('#youthbox').append(
+ 	`
+<span>
+<svg width="11px" height="25px" viewBox="0 0 11 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="male-youth" fill="#217CC2">
+            <ellipse id="Oval-3" cx="5.56182589" cy="2.64562458" rx="2.6384259" ry="2.58936426"></ellipse>
+            <rect id="Rectangle" x="2.39860612" y="5.68181818" width="6.20278777" height="11.3304839" rx="3.10139388"></rect>
+            <rect id="Rectangle-Copy" x="3.22564448" y="14.523396" width="1.73422085" height="10.1597813" rx="0.867110425"></rect>
+            <path d="M7.58841607,7.40409565 C8.00091756,7.29941412 8.4249179,7.53125908 8.53544734,7.92193585 L10.6565548,15.419191 C10.7670843,15.8098678 10.5222875,16.211435 10.1097861,16.3161165 C9.69728457,16.420798 9.27328422,16.1889531 9.16275478,15.7982763 L7.04164731,8.30102118 C6.93111787,7.91034441 7.17591459,7.50877717 7.58841607,7.40409565 Z" id="Rectangle-Copy-3"></path>
+            <path d="M3.52378966,7.40409565 C3.11128817,7.29941412 2.68728783,7.53125908 2.57675839,7.92193585 L0.455650921,15.419191 C0.34512148,15.8098678 0.589918191,16.211435 1.00241968,16.3161165 C1.41492116,16.420798 1.83892151,16.1889531 1.94945095,15.7982763 L4.07055842,8.30102118 C4.18108786,7.91034441 3.93629115,7.50877717 3.52378966,7.40409565 Z" id="Rectangle-Copy-5"></path>
+            <rect id="Rectangle-Copy-2" x="6.12027878" y="14.523396" width="1.73422085" height="10.1597813" rx="0.867110425"></rect>
+        </g>
+    </g>
+</svg>
+</span>
+`
+ 	)
+}
+
+app.printYouthGirl = function(){
+  
+ $('#youthbox').append(
+ 	`
+<span>
+<svg width="11px" height="25px" viewBox="0 0 11 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="female-youth" fill="#EC6FA0">
+            <ellipse id="Oval-3" cx="5.56182589" cy="2.64562458" rx="2.6384259" ry="2.58936426"></ellipse>
+            <rect id="Rectangle" x="2.39860612" y="5.68181818" width="6.20278777" height="11.3304839" rx="3.10139388"></rect>
+            <rect id="Rectangle-Copy" x="3.22564448" y="14.523396" width="1.73422085" height="10.1597813" rx="0.867110425"></rect>
+            <path d="M7.58841607,7.40409565 C8.00091756,7.29941412 8.4249179,7.53125908 8.53544734,7.92193585 L10.6565548,15.419191 C10.7670843,15.8098678 10.5222875,16.211435 10.1097861,16.3161165 C9.69728457,16.420798 9.27328422,16.1889531 9.16275478,15.7982763 L7.04164731,8.30102118 C6.93111787,7.91034441 7.17591459,7.50877717 7.58841607,7.40409565 Z" id="Rectangle-Copy-3"></path>
+            <path d="M3.52378966,7.40409565 C3.11128817,7.29941412 2.68728783,7.53125908 2.57675839,7.92193585 L0.455650921,15.419191 C0.34512148,15.8098678 0.589918191,16.211435 1.00241968,16.3161165 C1.41492116,16.420798 1.83892151,16.1889531 1.94945095,15.7982763 L4.07055842,8.30102118 C4.18108786,7.91034441 3.93629115,7.50877717 3.52378966,7.40409565 Z" id="Rectangle-Copy-5"></path>
+            <rect id="Rectangle-Copy-2" x="6.12027878" y="14.523396" width="1.73422085" height="10.1597813" rx="0.867110425"></rect>
+        </g>
+    </g>
+</svg>
+ </span>
+ `
+ 	)
+}
+
+app.printAdult = function(males, females){
+    $('#adultbox').empty();	 
+	for ( i = 0; i < males; i++){
+	app.printAdultMale(males)
+	};
+	for ( j = 0; j < females; j++){
+	app.printAdultFemale(females)
+	}
+}
+
+app.printAdultMale = function(){
+  
+ $('#adultbox').append(
+ 	`
+<span>
+<svg width="15px" height="30px" viewBox="0 0 17 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="adult-male" fill="#217CC2">
+            <ellipse id="Oval-3" cx="8.56148526" cy="3.97002459" rx="3.57764251" ry="3.52424487"></ellipse>
+            <rect id="Rectangle" x="4.18181818" y="7.94029851" width="8.63636364" height="15.8348277" rx="4.31818182"></rect>
+            <rect id="Rectangle-Copy" x="5.33333333" y="20.2967753" width="2.41461782" height="17.5820896" rx="1.20730891"></rect>
+            <rect id="Rectangle-Copy-3" transform="translate(13.601248, 16.283447) rotate(-15.000000) translate(-13.601248, -16.283447) " x="12.3939394" y="8.79176681" width="2.41461782" height="14.9833594" rx="1.20730891"></rect>
+            <rect id="Rectangle-Copy-5" transform="translate(3.510339, 16.283447) scale(-1, 1) rotate(-15.000000) translate(-3.510339, -16.283447) " x="2.3030303" y="8.79176681" width="2.41461782" height="14.9833594" rx="1.20730891"></rect>
+            <rect id="Rectangle-Copy-2" x="9.36363636" y="20.2967753" width="2.41461782" height="17.5820896" rx="1.20730891"></rect>
+        </g>
+    </g>
+</svg>
+</span>
+`
+ 	) 
+}
+
+app.printAdultFemale = function(){
+  
+ $('#adultbox').append(
+ 	`
+<span>
+<svg width="15px" height="30px" viewBox="0 0 17 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="adult-male-copy-4" fill="#EC6FA0">
+            <ellipse id="Oval-3" cx="8.56148526" cy="3.97002459" rx="3.57764251" ry="3.52424487"></ellipse>
+            <rect id="Rectangle" x="4.18181818" y="7.94029851" width="8.63636364" height="15.8348277" rx="4.31818182"></rect>
+            <rect id="Rectangle-Copy" x="5.33333333" y="20.2967753" width="2.41461782" height="17.5820896" rx="1.20730891"></rect>
+            <rect id="Rectangle-Copy-3" transform="translate(13.601248, 16.283447) rotate(-15.000000) translate(-13.601248, -16.283447) " x="12.3939394" y="8.79176681" width="2.41461782" height="14.9833594" rx="1.20730891"></rect>
+            <rect id="Rectangle-Copy-5" transform="translate(3.510339, 16.283447) scale(-1, 1) rotate(-15.000000) translate(-3.510339, -16.283447) " x="2.3030303" y="8.79176681" width="2.41461782" height="14.9833594" rx="1.20730891"></rect>
+            <rect id="Rectangle-Copy-2" x="9.36363636" y="20.2967753" width="2.41461782" height="17.5820896" rx="1.20730891"></rect>
+        </g>
+    </g>
+</svg>
+</span>
+ `
+ 	)
+}
+
+app.printSenior = function(males, females){
+	$('#seniorbox').empty();     
+	for ( i = 0; i < males; i++){
+		app.printSeniorMale(males)
+		
+		};
+	 
+	for ( j = 0; j < females; j++){
+	app.printSeniorFemale(females)
+	}
+}
+
+app.printSeniorMale = function(){
+  
+ $('#seniorbox').append(
+ 	`
+
+<svg width="15px" height="28px" viewBox="0 0 15 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="adult-male-copy-3">
+            <ellipse id="Oval-3" fill="#217CC2" cx="7.55932788" cy="3.9151313" rx="3.4521112" ry="3.47551534"></ellipse>
+            <rect id="Rectangle" fill="#217CC2" x="3.33333333" y="7.83050847" width="8.33333333" height="15.6158805" rx="4.16666667"></rect>
+            <rect id="Rectangle-Copy" fill="#217CC2" x="4.44444444" y="15.5415567" width="2.32989439" height="17.3389831" rx="1.16494719"></rect>
+            <path d="M9.82120028,8.91515953 C10.4426601,8.77577747 11.0814437,9.08447594 11.2479634,9.60465687 L14.4435473,19.5871525 C14.6100669,20.1073334 14.2412651,20.6420149 13.6198052,20.7813969 C12.9983454,20.920779 12.3595618,20.6120805 12.1930421,20.0918996 L8.99745822,10.109404 C8.83093856,9.58922303 9.19974044,9.05454158 9.82120028,8.91515953 Z" id="Rectangle-Copy-3" fill="#217CC2"></path>
+            <path d="M4.73091633,8.91515953 C4.10945649,8.77577747 3.47067289,9.08447594 3.30415323,9.60465687 L0.10856933,19.5871525 C-0.0579503326,20.1073334 0.31085155,20.6420149 0.93231139,20.7813969 C1.55377123,20.920779 2.19255483,20.6120805 2.35907449,20.0918996 L5.55465839,10.109404 C5.72117805,9.58922303 5.35237617,9.05454158 4.73091633,8.91515953 Z" id="Rectangle-Copy-5" fill="#217CC2"></path>
+            <rect id="Rectangle-Copy-2" fill="#217CC2" x="8.33333333" y="15.5415567" width="2.32989439" height="17.3389831" rx="1.16494719"></rect>
+            <path d="M0.65625,20.4152542 L0.65625,32.1610169" id="Line" stroke="#217CC2" stroke-width="1.3125" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>
+`
+ 	) 
+}
+
+app.printSeniorFemale = function(){
+  
+ $('#seniorbox').append(
+ 	`
+<span>
+
+<svg width="15px" height="28px" viewBox="0 0 15 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="adult-male-copy-2">
+            <ellipse id="Oval-3" fill="#EC6FA0" cx="7.55932788" cy="3.9151313" rx="3.4521112" ry="3.47551534"></ellipse>
+            <rect id="Rectangle" fill="#EC6FA0" x="3.33333333" y="7.83050847" width="8.33333333" height="15.6158805" rx="4.16666667"></rect>
+            <rect id="Rectangle-Copy" fill="#EC6FA0" x="4.44444444" y="15.5415567" width="2.32989439" height="17.3389831" rx="1.16494719"></rect>
+            <path d="M9.82120028,8.91515953 C10.4426601,8.77577747 11.0814437,9.08447594 11.2479634,9.60465687 L14.4435473,19.5871525 C14.6100669,20.1073334 14.2412651,20.6420149 13.6198052,20.7813969 C12.9983454,20.920779 12.3595618,20.6120805 12.1930421,20.0918996 L8.99745822,10.109404 C8.83093856,9.58922303 9.19974044,9.05454158 9.82120028,8.91515953 Z" id="Rectangle-Copy-3" fill="#EC6FA0"></path>
+            <path d="M4.73091633,8.91515953 C4.10945649,8.77577747 3.47067289,9.08447594 3.30415323,9.60465687 L0.10856933,19.5871525 C-0.0579503326,20.1073334 0.31085155,20.6420149 0.93231139,20.7813969 C1.55377123,20.920779 2.19255483,20.6120805 2.35907449,20.0918996 L5.55465839,10.109404 C5.72117805,9.58922303 5.35237617,9.05454158 4.73091633,8.91515953 Z" id="Rectangle-Copy-5" fill="#EC6FA0"></path>
+            <rect id="Rectangle-Copy-2" fill="#EC6FA0" x="8.33333333" y="15.5415567" width="2.32989439" height="17.3389831" rx="1.16494719"></rect>
+            <path d="M0.65625,20.4152542 L0.65625,32.1610169" id="Line" stroke="#EC6FA0" stroke-width="1.3125" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>
+</span>
+ `
+ 	)
+}
+
+app.countryload = function(){
+    
+    sample.forEach(function(index) {
+
+    $('#countrypicker1').append(`<option value= '${index}' >${index}`)
+    
+    $('#countrypicker2').append(`<option value= '${index}' >${index}`)
+
+    $('#countrypicker3').append(`<option value= '${index}' >${index}`)
+    })
+
+    
+}
+
+app.init = function(){
+
+    
+ app.toggler()
+ 
+ app.countryload()
+
+ 
+ 
+
+}
+
+
+
+$(function(){
+
+    app.init()
+     
+
+ 
+})
+ 
+
+
+
+
+ 
+</script>
+
+</body>
+</html>
